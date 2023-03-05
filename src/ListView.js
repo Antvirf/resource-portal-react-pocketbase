@@ -14,7 +14,7 @@ const ListView = ({authValid}) => {
             try {
                 setData(
                     await pb.collection('instances').getFullList({
-                        sort: 'dbDeleted,deletionRequestDate,+expiryDate',
+                        sort: 'dbDeleted,deletionRequestDate,-dbProvisioned,+expiryDate',
                         expand: 'creatorUserId'
                     })
                     );
